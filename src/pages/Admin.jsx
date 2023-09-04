@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {BsCloudUpload} from "react-icons/bs"
-import { imgTobase64 } from '../utils/ImgTobase64';
+import { imgTobase64 } from '../utils/imgTobase64';
 import { toast } from 'react-hot-toast';
 
 const Admin = () => {
