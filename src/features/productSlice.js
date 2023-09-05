@@ -8,7 +8,7 @@ const initialState = {
     Status:null
 }
 
-export const productFetch = createAsyncThunk("auth/productfetch", async () => {
+export const productFetch = createAsyncThunk("productfetch", async () => {
    
         const response = await axios.get(`${import.meta.env.VITE_SERVER_DOMAIN}/product`);
         return response?.data
