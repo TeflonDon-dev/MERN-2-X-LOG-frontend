@@ -17,7 +17,7 @@ const initialState = {
     userLoaded:false,
 }
 
-export const signUpUser = createAsyncThunk("/signUpUser", async (user, { rejectWithValue }) => {
+export const signUpUser = createAsyncThunk("signUpUser", async (user, { rejectWithValue }) => {
     try {
 
         const token = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/signup`, {
@@ -40,7 +40,7 @@ export const signUpUser = createAsyncThunk("/signUpUser", async (user, { rejectW
 
 
 
-export const loginUser = createAsyncThunk("/loginUser", async (user, { rejectWithValue }) => {
+export const loginUser = createAsyncThunk("loginUser", async (user, { rejectWithValue }) => {
     try {
         const token = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/login`, {
             email: user.email,
