@@ -20,7 +20,7 @@ const initialState = {
 export const signUpUser = createAsyncThunk("auth/signUpUser", async (user, { rejectWithValue }) => {
     try {
 
-        const token = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/signup`, {
+        const token = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/api/signup`, {
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
@@ -42,7 +42,7 @@ export const signUpUser = createAsyncThunk("auth/signUpUser", async (user, { rej
 
 export const loginUser = createAsyncThunk("auth/loginUser", async (user, { rejectWithValue }) => {
     try {
-        const token = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/login`, {
+        const token = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/api/login`, {
             email: user.email,
             password: user.password,
             
