@@ -9,7 +9,7 @@ const initialState = {
     
 }
 
-export const subscribeUser = createAsyncThunk("auth/subscribeUser", async (user,{rejectWithValue}) => {
+export const subscribeUser = createAsyncThunk("subscribeUser", async (user,{rejectWithValue}) => {
      
     try {
         const response = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/subscription`, {
