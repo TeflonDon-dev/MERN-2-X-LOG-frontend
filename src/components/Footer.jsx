@@ -9,10 +9,24 @@ const Footer = ({isDark}) => {
           <div className='flex flex-col md:flex-row w-5/6 justify-start md:justify-around md:items-center gap-7 ml-5 md:m-auto'>
               <div className=' flex flex-col gap-7'>
                   <Link to={"/"} className=' text-2xl md:text-3xl font-semibold'>X-LOG</Link>
-                  <div className='flex gap-2'>
-                      <BsTwitter className='bg-slate-400 rounded-md h-8 w-8 p-1 '/>
-                      <BsLinkedin className='bg-slate-400 rounded-md h-8 w-8 p-1 '/>
-                      <BsGithub className='bg-slate-400 rounded-md h-8 w-8 p-1 '/>
+          <div className='flex gap-2'>
+          
+            <div>
+              <a target='_blank' href="https://twitter.com/joshuaokorie008">
+                 <BsTwitter className='bg-slate-400 rounded-md h-8 w-8 p-1 '/>
+                </a>
+            </div>
+            <div>
+              <a target='_blank' href="https://www.linkedin.com/in/joshua-okorie-b30478251/">
+                   <BsLinkedin className='bg-slate-400 rounded-md h-8 w-8 p-1 '/>
+              </a>
+            </div>
+            <div>
+              <a target='_blank' href="https://github.com/TeflonDon-dev">
+                     <BsGithub className='bg-slate-400 rounded-md h-8 w-8 p-1 '/>
+              </a>
+             </div>
+                     
                     </div>
               </div>
               <div className=' flex flex-col  gap-5'>

@@ -5,6 +5,8 @@ import { toast } from 'react-hot-toast';
 
 const Admin = () => {
 
+  const[loading,setLoading]=useState(false)
+
   const [data, setData] = useState({
     name: "",
     category: "",
@@ -24,14 +26,15 @@ const Admin = () => {
 
   }
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
+    
     e.preventDefault();
 
 
     const{name,image,price,category}=data
 
     if (name && image && price && category) {
-      
+      setLoading(true)
       const fetchData = await fetch(`${import.meta.env.VITE_SERVER_DOMAIN}/uploadproduct`, {
         method: 'POST',
         headers: {
@@ -40,7 +43,8 @@ const Admin = () => {
         body:JSON.stringify(data)
       });
       const response = await fetchData.json();
-      toast(response.message)
+      setLoading(false)
+      toast.success(response.message)
 
       setData({
         name: "",
@@ -50,6 +54,7 @@ const Admin = () => {
         description: ""
       })
     } else {
+      setLoading(false)
       toast.error("Enter required fields")
     }
   }
@@ -92,7 +97,7 @@ const Admin = () => {
         <input value={data.price} id='price' name='price' onChange={handleOnChange} type="text" className=' bg-slate-200 p-1 my-1 rounded-md focus:outline-blue-500' />
         <label className=' text-blue-500' htmlFor="description">Description</label>
         <textarea value={data.description} onChange={handleOnChange} className=' bg-slate-200 p-1 my-1 resize-none rounded-md focus:outline-blue-500' name="description" id="description"  rows="2"></textarea>
-      <button className='bg-blue-500 hover:bg-blue-600 active:scale-95 active:duration-300 active:transition active:ease-in-out text-white font-semibold text-lg drop-shadow my-2 p-2 rounded-lg'>Upload</button>
+        <button className='bg-blue-500 hover:bg-blue-600 active:scale-95 active:duration-300 active:transition active:ease-in-out text-white font-semibold text-lg drop-shadow my-2 p-2 rounded-lg'>{loading ? "Uploading" : "Upload"}</button>
       </form>
     </div>
   )

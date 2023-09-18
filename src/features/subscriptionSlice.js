@@ -5,14 +5,14 @@ const initialState = {
     subscribers: [],
     status: null,
     loading: true,
-    error:null
+    error:"",
     
 }
 
 export const subscribeUser = createAsyncThunk("subscribeUser", async (user,{rejectWithValue}) => {
      
     try {
-        const response = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/subscription`, {
+        const response = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/api/subscription`, {
             email:user.email
         })
      return response?.data

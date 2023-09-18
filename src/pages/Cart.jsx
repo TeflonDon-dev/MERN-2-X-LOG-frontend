@@ -8,12 +8,15 @@ import { AiOutlineDelete } from "react-icons/ai";
 import emptyCart from "../assets/emptycart.svg";
 import {loadStripe} from '@stripe/stripe-js';
 import { toast } from 'react-hot-toast';
+import {RiSecurePaymentFill} from "react-icons/ri"
 
 const Cart = () => {
 
   const navigate=useNavigate()
 
   const auth = useSelector(state => state.auth)
+
+  console.log(auth);
 
     const cart = useSelector(store => store.cart);
 
@@ -105,7 +108,8 @@ const Cart = () => {
                 <p className=' font-medium'>$ {(cart.cartTotalAmount).toFixed(2)}</p>
           </div>
           <p className='my-2'>Taxes and shipping cost calculated at checkout</p>
-          <button onClick={handlePayment} className=' py-2 px-20 bg-blue-600 text-white'>Checkout</button>
+              <button onClick={handlePayment} >{auth._id ? <p className=' py-2 px-20 bg-blue-600 text-white'>CheckOut</p> : <p className=' py-2 px-20 bg-yellow-400 hover:text-white duration-500 hover:bg-yellow-600 text-black'>Login to CheckOut</p>}</button>
+              <p className=' my-4 flex items-center gap-2 text-sm'> <RiSecurePaymentFill className=' w-5 h-5'/> Secure Payment Option</p>
         </div>
       </div>
       </>)}

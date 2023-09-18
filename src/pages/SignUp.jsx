@@ -74,9 +74,15 @@ const SignUp = () => {
 
   
   return (
-    <div className='mt-10 grid items-center w-5/6  m-auto max-w-md bg-white p-10 rounded-md drop-shadow-lg text-black'>
-      {auth.registerStatus === "pending" ? <Spinner /> : (
-        <>
+   <>
+        {auth.registerStatus === "pending" ? (
+              <div className=' h-screen flex items-center flex-col justify-center'>
+                  <Spinner />
+                  <p>submiting...</p>
+              </div>
+          ) : (
+        
+           <div className='mt-10 grid items-center w-5/6  m-auto max-w-md bg-white p-5 rounded-md drop-shadow-lg text-black'>
       <div className='relative w-20 h-20 overflow-hidden rounded-full drop-shadow-md shadow-md mx-auto'>
                   <img src={user.image?user.image:hello} className=' w-full h-full' alt="" />
                  <label htmlFor="profileImage">
@@ -108,9 +114,9 @@ const SignUp = () => {
               <button className='w-full bg-blue-500 py-1 my-5 px-3 text-white text-base rounded-sm hover:bg-blue-900 transition-all active:scale-105 '>Submit</button>
               <p>Already have an account?<span><Link to={"/login"} className=' underline capitalize ml-1 text-blue-400 text-sm'>Log In</Link></span></p>
           </form>
-          </>
+          </div>
       )}
-      </div>
+        </>
   )
 }
 

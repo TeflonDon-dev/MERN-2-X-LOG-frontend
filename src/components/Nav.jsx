@@ -48,8 +48,10 @@ const Nav = ({ isDark, setIsDark }) => {
   return (
     <nav className="w-full fixed top-0 left-0 z-50">
       <div className={` ${isDark ? 'bg-black text-white drop-shadow-md flex items-center justify-between p-4 md:p-5': 'drop-shadow-md flex items-center justify-between p-4 md:p-5 bg-white'} `}>
-        <div className='cursor-pointer text-2xl md:text-3xl font-medium flex items-center gap-3'>            
-         <Link to={"/"}> X-LOG</Link>
+        <div className='cursor-pointer text-2xl md:text-3xl font-medium flex items-center gap-3'>
+          <div>
+            <Link to={"/"}> X-LOG</Link>
+            </div>
            <div className=' md:hidden text-2xl flex cursor-pointer' onClick={()=>setIsDark(!isDark)}>
 
             {isDark?<BsMoonStars/>:<BsSun/>}
@@ -63,7 +65,7 @@ const Nav = ({ isDark, setIsDark }) => {
               <span className=' absolute rounded-full -right-1 -top-1  text-sm h-5 w-5 text-center bg-black text-white border border-white'>{cart.cartItemQuantity}</span>
                </Link>
           </div>
-          <span onClick={() => setOpen(!open)}> {open ? <AiOutlineClose /> : <AiOutlineMenu />}</span>
+          <div onClick={() => setOpen(!open)}> {open ? <AiOutlineClose /> : <AiOutlineMenu />}</div>
       
          
        </div>

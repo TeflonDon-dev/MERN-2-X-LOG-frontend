@@ -33,7 +33,7 @@ const AllProducts = () => {
 
   return (
       <div className=' mt-10'>
-          <div className=" flex gap-4 justify-center items-center overflow-scroll scrollbar-none  ">
+          <div className=" flex  gap-4 justify-center items-start overflow-scroll scrollbar-none  ">
               {isLoading ? <p>loading...</p> : categoryList.map((el, index) => (
                   <FilterProduct
                       key={index}
@@ -61,7 +61,9 @@ const AllProducts = () => {
                   </div>
                </Link>
               <p className=' text-slate-500 font-thin'>{product.category}</p>
+               <Link to={`/productdetails/${product._id}`}>
                 <p className=' text-blue-600  '>{product.name}</p>
+                  </Link>
                  
               <p className=' text-orange-400'><span>$</span>{product.price}</p>
              <button className=' hover:bg-blue-600 w-full bg-blue-500 text-white  mt-2 rounded-sm py-1'>Add to cart</button>

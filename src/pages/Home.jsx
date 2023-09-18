@@ -44,28 +44,43 @@ const Home = () => {
   const [user, setUser] = useState({
     email:""
   })
+ console.log(user.email);
+
+  
   
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setUser(prevState => {
-      return {
-        ...prevState,
-        [name]:value
-      }
+    // setUser(prevState => {
+    //   return {
+    //     ...prevState,
+    //     [name]:value
+    //   }
+    // })
+    
+    setUser({
+      [name]:value
     })
+   
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-       dispatch(subscribeUser(user));
-       setUser(prevState => {
-      return {
-        ...prevState,
-        email:""
-        }
-       })
-     if (error) return toast.error(error);
+    dispatch(subscribeUser(user));
+   
+     
+    
+    if(error) {
+    return  toast.error(error)
+    }
+    
+     toast.success("Subscribed successfully!")
+    setUser({
+      email:""
+    })
+  
+   
+  
   }
 
   const {productList,isLoading} = useSelector(state => state.products);
@@ -273,16 +288,18 @@ const Home = () => {
       </section>
 
       {/* newsletter section */}
-      <section className=' w-4/5 bg-slate-100 text-black rounded-lg mx-auto mt-10 p-5'>
+      <section className=' w-4/5 bg-slate-100 text-black rounded-lg mx-auto mt-10 p-2 md:p-5'>
         <div className=' flex md:flex-row flex-col  gap-6 md:items-center md:justify-between p-5'> 
           <div>
             <p className=' text-lg  font-bold mb-3'>Sign Up For Our Newsletter</p>
             <p className=' text-sm '>Get the latest blog and updates delivered straight to your inbox</p>
           </div>
           <form onSubmit={handleSubmit} className=' md:flex md:justify-between  md:basis-3/5'>
-            <input type="email" value={user.email} name='email'  onChange={handleChange} placeholder='Enter Your Email' className=' p-2 outline-none md:w-5/6 mr-5'/>
-            <button className=' p-2 text-white bg-blue-500 text-sm'>Subcribe</button>
-           
+            <input required type="email" value={user.email} name='email'  onChange={handleChange} placeholder='Enter Your Email' className=' p-2 outline-none md:w-5/6 mr-5 w-full'/>
+            <button className='md:mt-0 mt-3 p-2 text-white bg-blue-500 text-sm rounded-md'>{status == "pending" ? "submitting" : "Subscribe"}</button>
+            
+          
+            
           </form>
         </div>
       </section>

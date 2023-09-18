@@ -12,7 +12,7 @@ const Modal = () => {
           <div className=' py-6 flex flex-col justify-center items-center bg-white  w-60 rounded-md'>
               <p className=' mb-3'>Clear cart container?</p>
               <div className=' flex items-center gap-4'>
-                  <button onClick={()=>dispatch(closeModal())} className=' hover:bg-blue-500 duration-500 hover:text-white px-3 border-[1px] border-blue-500 rounded-sm py-1'>cancel</button>
+                  <button onClick={()=>dispatch(closeModal())} className=' hover:bg-yellow-500 duration-500 hover:text-white px-3 border-[1px] border-yellow-500 rounded-sm py-1'>Cancel</button>
                   <button onClick={() => {
                       dispatch(clearCart())
                       dispatch(dispatch(closeModal()))

@@ -56,7 +56,7 @@ const Login = () => {
               </div>
           ) : (
           
-              <div className='mt-10 grid items-center w-5/6  m-auto max-w-md bg-white text-black p-10 rounded-md drop-shadow-lg'>
+              <div className='mt-10 grid items-center w-5/6  m-auto max-w-md bg-white text-black p-5 rounded-md drop-shadow-lg'>
                   <form onSubmit={handleSubmit}>
                       <label className=' w-full block mb-5' htmlFor="email">Email</label>
                       <input className=' mb-5 focus:border-blue-500 w-full border-2 border-solid p-1 rounded-md focus:outline-none ' onChange={handleChange} value={user.email} type="email" id='email' name='email' placeholder='Enter Email' />

@@ -40,7 +40,7 @@ const About = () => {
       <p>Thank you for choosing X-Log e-Pharmacy. We look forward to serving you and being a part of your health and wellness journey.</p>
       <p>For any inquiries or assistance, please don't hesitate to contact our dedicated customer support team. Your health is our priority, and we're here to support you.</p>
       <div className=' text-left my-5'>
-        <p className=' my-4'>Sincerely,</p>
+        <p className=' my-2'>Sincerely,</p>
         <p className=' font-semibold'>Joshua Okorie</p>
           <p>CEO, X-LOG</p>
       </div>
