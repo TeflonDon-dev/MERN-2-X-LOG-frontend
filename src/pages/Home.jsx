@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import { EffectFade,Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { EffectFade,Pagination, Autoplay} from 'swiper/modules';
 import slide1 from "../assets/slide1.jpg";
 import slide2 from "../assets/slide2.jpg";
 import slide3 from "../assets/slide3.jpg";
@@ -44,7 +44,7 @@ const Home = () => {
   const [user, setUser] = useState({
     email:""
   })
- console.log(user.email);
+
 
   
   
@@ -138,8 +138,8 @@ const Home = () => {
       </Swiper>
 
       <div className=' mt-5 flex flex-col items-center gap-5'>
-        <p className=' md:text-4xl text-2xl font-bold text-center'>Welcome to the best <span className=' text-red-500'>e-pharmacy</span>  in the city of Maiduguri</p>
-        <p className=' sm:text-2xl text-md text-center'>Get all your pharmaceutical needs in a click a way! </p>
+        <p className=' mx-2 md:text-4xl text-2xl font-bold text-center'>Welcome to the best <span className=' text-red-500'>e-pharmacy</span>  in the city of Maiduguri</p>
+        <p className=' mx-2  sm:text-2xl text-md text-center'>Get all your pharmaceutical needs in a click a way! </p>
         <button className=' bg-blue-600 p-3 text-white text-base rounded-lg hover:bg-blue-500 duration-300 active:scale-75'><Link to={"/signup"}>Create A Free account</Link> </button>
       </div>
 
@@ -180,7 +180,9 @@ const Home = () => {
 
       <section>
         <Swiper
-         effect={'fade'}
+          
+           effect={'fade'}
+           grabCursor={true}
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -198,19 +200,19 @@ const Home = () => {
       
       >
           <SwiperSlide >
-            <div className=' text-black bg-slate-100  flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
+            <div className=' h-52 text-black bg-slate-100  flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
               <div className=' h-14 w-14 overflow-hidden my-3'>
                 <img className='w-full h-full rounded-full' src={placeholder1} alt="" />
               </div>
               <p className=' text-sm text-center'>
-                X-log is a very reliable e-pharmacy outlet. I fully trust depend for quick delivery of my medical supplies.
+                X-log is next to none❤
               </p>
               <p className=' text-sm my-2'>~Jenkins Banks</p>
 
             </div>
         </SwiperSlide>
           <SwiperSlide >
-            <div className=' text-black bg-slate-100   flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
+            <div className=' h-52 text-black bg-slate-100   flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
               <div className=' h-14 w-14 overflow-hidden my-3'>
                 <img className='w-full h-full rounded-full' src={placeholder2} alt="" />
               </div>
@@ -222,38 +224,38 @@ const Home = () => {
             </div>
         </SwiperSlide>
           <SwiperSlide >
-            <div className='text-black bg-slate-100 flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
+            <div  className='h-52 text-black bg-slate-100  flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
               <div className=' h-14 w-14 overflow-hidden my-3'>
                 <img className='w-full h-full rounded-full' src={placeholder3} alt="" />
               </div>
               <p className=' text-sm text-center'>
-                X-log is a very reliable e-pharmacy outlet. I fully trust depend for quick delivery of my medical supplies.
+                X-log is one stop shop for my medical supplies.
               </p>
               <p className=' text-sm my-2'>~Michael Lloyd</p>
 
             </div>
         </SwiperSlide>
           <SwiperSlide >
-            <div className=' text-black bg-slate-100 flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
+            <div className='h-52 text-black bg-slate-100 flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
               <div className=' h-14 w-14 overflow-hidden my-3'>
                 <img className='w-full h-full rounded-full' src={placeholder4} alt="" />
               </div>
               <p className=' text-sm text-center'>
-                X-log is a very reliable e-pharmacy outlet. I fully trust depend for quick delivery of my medical supplies.
+                X-log is my my favorite e-pharmacy outlet❤❤.
               </p>
               <p className=' text-sm my-2'>~Peter Woods</p>
 
             </div>
         </SwiperSlide>
           <SwiperSlide >
-            <div className=' text-black bg-slate-100 flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
+            <div className='h-52 text-black bg-slate-100 flex flex-col items-center justify-center w-4/5 sm:w-3/6 mx-auto p-3 rounded-lg drop-shadow-lg m-5'>
               <div className=' h-14 w-14 overflow-hidden my-3'>
                 <img className='w-full h-full rounded-full' src={placeholder5} alt="" />
               </div>
               <p className=' text-sm text-center'>
-                X-log is a very reliable e-pharmacy outlet. I fully trust depend for quick delivery of my medical supplies.
+                X-log is a very reliable e-pharmacy outlet. I fully trust and depend on them for quick delivery of my medical supplies.
               </p>
-              <p className=' text-sm my-2'>~Peter Woods</p>
+              <p className=' text-sm my-2'>~Cynthia</p>
 
             </div>
         </SwiperSlide>

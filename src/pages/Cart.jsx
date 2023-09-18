@@ -16,8 +16,6 @@ const Cart = () => {
 
   const auth = useSelector(state => state.auth)
 
-  console.log(auth);
-
     const cart = useSelector(store => store.cart);
 
     const dispatch = useDispatch(); 
