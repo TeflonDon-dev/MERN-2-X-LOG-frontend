@@ -15,7 +15,8 @@ export const subscribeUser = createAsyncThunk("subscribeUser", async (user,{reje
         const response = await axios.post(`${import.meta.env.VITE_SERVER_DOMAIN}/api/subscription`, {
             email:user.email
         })
-     return response?.data
+        return response?.data
+     
     } catch (error) {
         console.log(error.response.data);
         return rejectWithValue(error.response.data);
