@@ -138,11 +138,11 @@ const Home = () => {
       </Swiper>
 
       <div className=" mt-5 flex flex-col items-center gap-5">
-        <p className=" mx-2 md:text-4xl text-2xl font-bold text-center">
+        <p className=" mx-1 md:text-4xl text-2xl font-bold text-center">
           Welcome to the best <span className=" text-red-500">e-pharmacy</span>{" "}
           in the city of Maiduguri
         </p>
-        <p className=" mx-2  sm:text-2xl text-base text-center">
+        <p className=" mx-1  sm:text-2xl text-base text-center">
           Get all your pharmaceutical needs in a click a way!{" "}
         </p>
         <button className=" bg-blue-600 p-3 text-white text-base rounded-lg hover:bg-blue-500 duration-300 active:scale-75">
