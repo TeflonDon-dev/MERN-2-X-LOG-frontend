@@ -188,7 +188,7 @@ const Home = () => {
                 key={el._id}
                 _id={el._id}
                 name={el.name}
-                category={ElementInternals.category}
+                category={el.category}
                 price={el.price}
                 image={el.image}
                 el={el}
